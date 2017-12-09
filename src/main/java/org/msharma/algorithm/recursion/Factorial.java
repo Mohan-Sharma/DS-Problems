@@ -1,4 +1,4 @@
-package org.msharma.algorithm.recursion.Practice_2;
+package org.msharma.algorithm.recursion;
 
 /**
  * @author Mohan Sharma Created on 27/08/17.
