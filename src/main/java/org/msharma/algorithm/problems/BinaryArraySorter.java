@@ -4,10 +4,16 @@ import java.util.Arrays;
 
 /**
  * @author Mohan Sharma Created on 12/10/17.
+ *
+ * Given an array containg 0's and 1's. Sort the array.
  */
 public class BinaryArraySorter
 {
-
+	/**
+	 * This function sort the binary array by counting the number of 0's first.
+	 * @param array the input array
+	 * @return the sorted binary array
+	 */
 	public int[] sortBinaryArray(int[] array) // time-complexity O(n)
 	{
 		int numberOfZeros = 0;
@@ -28,6 +34,11 @@ public class BinaryArraySorter
 		return array;
 	}
 
+	/**
+	 * This function sort the binary array by using a counter fill 0's first then remaining 1's.
+	 * @param array the input array
+	 * @return the sorted binary array
+	 */
 	public int[] sortBinaryArrayInTwoScan(int[] array)
 	{
 		int j=0;
@@ -44,6 +55,11 @@ public class BinaryArraySorter
 		return array;
 	}
 
+	/**
+	 * This function sort the binary array by using a pivot all value less than pivot move to left.
+	 * @param array the input array
+	 * @return the sorted binary array
+	 */
 	public int[] sortBinaryArrayEfficiently(int[] array)
 	{
 		int j=0, pivot=1;
