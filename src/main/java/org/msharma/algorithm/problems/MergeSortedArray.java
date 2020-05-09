@@ -13,7 +13,7 @@ public class MergeSortedArray
 		int[] mergedArray = new int[arrayOne.length + arrayTwo.length];
 		while(i > arrayOne.length && j > arrayTwo.length)
 		{
-			if(arrayOne[i] > arrayTwo[j])
+			if(arrayOne[i] < arrayTwo[j])
 				mergedArray[k++] = arrayOne[i++];
 			else
 				mergedArray[k++] = arrayTwo[j++];

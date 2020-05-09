@@ -60,7 +60,7 @@ public class MaximumSumNonContiguousSubArray
 			}
 			else
 			{
-				leftIndex = leftIndex + 2;
+				leftIndex = leftIndex + 1;
 				currentIterationCount++;
 			}
 		}
@@ -71,6 +71,6 @@ public class MaximumSumNonContiguousSubArray
 	{
 		int[] array = {1, 2, 3, 4, 5, 6, 7, 8};
 		MaximumSumNonContiguousSubArray maximumSumNonContiguousSubArray = new MaximumSumNonContiguousSubArray();
-		System.out.println(maximumSumNonContiguousSubArray.getMaximumSumNonContiguousSubArrayUsingSlidingWindow(array, 5));
+		System.out.println(maximumSumNonContiguousSubArray.getMaximumSumNonContiguousSubArrayUsingSlidingWindow(array, 2));
 	}
 }

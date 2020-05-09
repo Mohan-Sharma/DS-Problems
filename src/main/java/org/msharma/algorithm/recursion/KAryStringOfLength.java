@@ -31,7 +31,7 @@ public class KAryStringOfLength
 
 	public static void main(String[] args)
 	{
-		int digitUse = 3;
+		int digitUse = 4;
 		int bits = 2;
 		KAryStringOfLength kAryStringOfLength = new KAryStringOfLength(new int[bits]);
 		kAryStringOfLength.k_AryString(bits, digitUse);

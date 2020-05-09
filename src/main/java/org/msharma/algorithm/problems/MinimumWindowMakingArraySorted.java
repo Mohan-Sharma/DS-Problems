@@ -1,6 +1,10 @@
 package org.msharma.algorithm.problems;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * This class demonstrates how we can find the minimum window by sorting which the whole array becomes sorted.
@@ -39,9 +43,19 @@ public class MinimumWindowMakingArraySorted
 
 	public static void main(String[] args)
 	{
-		int[] array = {1, 3, 2, 7, 5, 6, 4, 8};
+		/*int[] array = {1, 3, 2, 7, 5, 6, 4, 8};
 		MinimumWindowMakingArraySorted minimumWindowMakingArraySorted = new MinimumWindowMakingArraySorted();
 		int[] result  = minimumWindowMakingArraySorted.getTheMinimumWindowWhichMakesTheArraySorted(array);
-		System.out.println(Arrays.toString(result));
+		System.out.println(Arrays.toString(result));*/
+		String ccNumber = "123232323767";
+		ccNumber = insert(ccNumber, "-", 4);
+		System.out.println(
+				StringUtils.overlay(ccNumber, StringUtils.repeat("X", ccNumber.length()-4), 0, ccNumber.length()-4));
+	}
+
+	public static String insert(String text, String insert, int period) {
+		Pattern p = Pattern.compile("(.{" + period + "})", Pattern.DOTALL);
+		Matcher m = p.matcher(text);
+		return m.replaceAll("$1" + insert);
 	}
 }

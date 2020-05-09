@@ -2,22 +2,24 @@ package org.msharma.algorithm.problems;
 
 import com.google.common.collect.Maps;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
  * @author Mohan Sharma Created on 10/10/17.
  */
-public class IndicesElementSumEqualsResultFinder
+public class PairHavingGivenSumFinder
 {
 	private int[] array;
 
-	public IndicesElementSumEqualsResultFinder(int[] array)
+	public PairHavingGivenSumFinder(int[] array)
 	{
 		this.array = array;
 	}
 
-	public void printIndicesWhoseElementSumEqualsResult(int sum)
+	public void printIndicesWhoseElementSumEqualsResultBruteForce(int sum)
 	{
 		for(int i=0; i<array.length;i++)
 		{
@@ -59,7 +61,7 @@ public class IndicesElementSumEqualsResultFinder
 	{
 		int[] array = {2, 5, 6, 8, 9, 4};
 		int sum = 10;
-		IndicesElementSumEqualsResultFinder finder = new IndicesElementSumEqualsResultFinder(array);
+		PairHavingGivenSumFinder finder = new PairHavingGivenSumFinder(array);
 		finder.printIndicesWhoseElementSumEqualsResultUsingHashing(sum);
 	}
 }

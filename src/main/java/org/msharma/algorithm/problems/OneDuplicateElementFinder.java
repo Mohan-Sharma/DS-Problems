@@ -78,11 +78,25 @@ public class OneDuplicateElementFinder
 		return (b - a) / 2;
 	}
 
+	public void duplicate(int[] array)
+	{
+		for (int i = 0; i < array.length; i++)
+		{
+			int index = array[i] % array.length;
+			array[index] += array.length;
+		}
+		for (int i = 0; i < array.length; i++)
+		{
+			if ((array[i]/array.length) > 1)
+				System.out.println(i);
+		}
+	}
+
 	public static void main(String[] args)
 	{
-		int[] array = { 7, 3, 5, 4, 2, 7, 1, 6 };
+		int[] array = { 1, 2, 3, 4, 4, 4};
 		OneDuplicateElementFinder oneDuplicateElementFinder = new OneDuplicateElementFinder();
-		int result = oneDuplicateElementFinder.findDuplicateElementFromArrayContainingNMinusOneElement(array);
-		System.out.println(result);
+		oneDuplicateElementFinder.duplicate(array);
+		//System.out.println(result);
 	}
 }

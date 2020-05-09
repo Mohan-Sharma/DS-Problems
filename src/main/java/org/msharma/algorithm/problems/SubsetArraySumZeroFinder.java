@@ -2,8 +2,11 @@ package org.msharma.algorithm.problems;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 
 import java.util.*;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @author Mohan Sharma Created on 11/10/17.
@@ -154,12 +157,34 @@ public class SubsetArraySumZeroFinder
 		System.out.println("SubArray from " + (endIndex - maxLength + 1)+ " to " + endIndex);
 	}
 
+	public Set<Set<Integer>> subset(List<Integer> list)
+	{
+		Set<Set<Integer>> result = Sets.newHashSet();
+		int numberOfSets = 1 << list.size();
+		for(int i=0; i< numberOfSets; i++)
+		{
+			Set<Integer> set = Sets.newHashSet();
+			int bitPosition = 1;
+			for (int j = 0; j < list.size(); j++)
+			{
+				if ((bitPosition & i) != 0)
+				{
+					set.add(list.get(j));
+				}
+				bitPosition = bitPosition << 1;
+			}
+			result.add(set);
+		}
+		return result;
+	}
+
 	public static void main(String[] args)
 	{
 		int[] array = new int[]{ 3, 4, -7, 3, 1, 3, 1, -4, -2, -2};
 		SubsetArraySumZeroFinder subsetArraySumZeroFinder = new SubsetArraySumZeroFinder(array);
-		subsetArraySumZeroFinder.printLargestSubsetWhoseElementSumToZero();
+		subsetArraySumZeroFinder.printAllSubsetWhoseElementSumToZero();
 		//printallSubarrays(new int[]{ 3, 4, -7,  3,  1,  3,   1,  -4,  -2,  -2});
 		//						   0   3  7	  0   3   4   7    8    4    2    0
+
 	}
 }
